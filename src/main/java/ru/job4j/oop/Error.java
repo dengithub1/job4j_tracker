@@ -23,8 +23,8 @@ public class Error {
 
     public static void main(String[] args) {
         Error error1 = new Error();
-        Error error2 = new Error(true,200,"OK");
-        Error error3 = new Error(false,500,"ERROR");
+        Error error2 = new Error(true, 200, "OK");
+        Error error3 = new Error(false, 500, "ERROR");
 
         error1.printInfo();
         error2.printInfo();
