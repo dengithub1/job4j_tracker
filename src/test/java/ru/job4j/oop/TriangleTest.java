@@ -24,7 +24,7 @@ public class TriangleTest {
         Point c = new Point(0, 7);
         Triangle triangle = new Triangle(a, b, c);
         double rsl = triangle.area();
-        double expected = - 1;
+        double expected = -1;
         assertThat(rsl).isEqualTo(expected);
     }
 }
