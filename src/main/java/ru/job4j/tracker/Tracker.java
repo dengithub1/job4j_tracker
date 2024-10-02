@@ -20,11 +20,10 @@ public class Tracker {
 
     public boolean replace(int id, Item item) {
         int index = indexOf(id);
-        for (int i = 0; i < items.length; i++) {
-            if (index == i) {
-                items[i].setName(item.getName());
-                return true;
-            }
+        if (index != -1) {
+            item.setId(items[index].getId());
+            items[index] = item;
+            return true;
         }
         return false;
     }
