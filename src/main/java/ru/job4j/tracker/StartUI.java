@@ -49,6 +49,17 @@ public class StartUI {
                 Item item = tracker.findById(id);
                 tracker.delete(id);
                 System.out.println(item != null ? "Заявка удалена успешно." : "Ошибка удаления заявки");
+            }
+            if (select == 4) {
+                System.out.println("=== Вывод заявки по id ===");
+                System.out.print("Введите id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                Item item = tracker.findById(id);
+                if (item != null) {
+                    System.out.println(item);
+                } else {
+                    System.out.println("Заявка с ввеленым id: " + id + " не найдена.");
+                }
             } else if (select == 6) {
                 run = false;
             }
@@ -65,7 +76,6 @@ public class StartUI {
         for (int i = 0; i < menu.length; i++) {
             System.out.println(i + ". " + menu[i]);
         }
-
     }
 
     public static void main(String[] args) {
