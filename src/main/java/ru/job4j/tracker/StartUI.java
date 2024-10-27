@@ -39,8 +39,7 @@ public class StartUI {
                 } else {
                     System.out.println("Ошибка замены заявки.");
                 }
-            }
-            if (select == 3) {
+            } else if (select == 3) {
                 System.out.println("=== Удаление заявки ===");
                 System.out.print("Введите id: ");
                 int id = Integer.parseInt(scanner.nextLine());
