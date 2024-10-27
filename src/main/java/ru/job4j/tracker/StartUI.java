@@ -56,8 +56,7 @@ public class StartUI {
                 } else {
                     System.out.println("Заявка с ввеленым id: " + id + " не найдена.");
                 }
-            }
-            if (select == 5) {
+            } else if (select == 5) {
                 System.out.println("=== Вывод заявок по имени ===");
                 System.out.print("Введите имя: ");
                 String name = scanner.nextLine();
