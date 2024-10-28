@@ -6,7 +6,7 @@ public class StartUI {
         boolean run = true;
         while (run) {
             showMenu();
-            int select = Integer.parseInt(input.askStr("Выбрать: "));
+            int select = input.askInt("Выбрать: ");
             if (select == 0) {
                 createItem(input, tracker);
             } else if (select == 1) {
@@ -59,7 +59,7 @@ public class StartUI {
 
     public static void replaceItem(Input input, Tracker tracker) {
         System.out.println("=== Редактирование заявки ===");
-        int id = Integer.parseInt(input.askStr("Введиите id: "));
+        int id = input.askInt("Введиите id: ");
         String name = input.askStr("Введите имя: ");
         Item item = new Item(name);
         if (tracker.replace(id, item)) {
