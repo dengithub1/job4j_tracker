@@ -112,7 +112,7 @@ public class StartUITest {
         Item item = tracker.add(new Item("First Item"));
         Input input = new MockInput(
                 new String[]{
-                        "0", String.valueOf(item.getId()), "1"
+                        "0", "1"
                 }
         );
         UserAction[] actions = {
@@ -168,7 +168,7 @@ public class StartUITest {
         Item item = tracker.add(new Item("John"));
         Input input = new MockInput(
                 new String[]{
-                        "0", "1", "1"
+                        "0", String.valueOf(item.getId()), "1"
                 }
         );
         UserAction[] actions = {
