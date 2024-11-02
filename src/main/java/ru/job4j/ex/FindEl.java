@@ -8,9 +8,10 @@ public class FindEl {
             if (key.equals(value[i])) {
                 result = i;
             }
-            if (result == -1) {
-                throw new ElementNotFoundException("No such element in array");
-            }
+            break;
+        }
+        if (result == -1) {
+            throw new ElementNotFoundException("No such element in array");
         }
         return result;
     }
