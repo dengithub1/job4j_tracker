@@ -84,7 +84,7 @@ public class StartUITest {
         Item one = tracker.add(new Item("test1"));
         String replaceName = "New Test Name";
         Input input = new MockInput(
-                new String[] {"0", String.valueOf(one.getId()), replaceName, "1"}
+                new String[]{"0", String.valueOf(one.getId()), replaceName, "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new ReplaceAction(output),
@@ -187,5 +187,27 @@ public class StartUITest {
                         + "0. Показать заявку по id" + ln
                         + "1. Завершить программу" + ln
                         + "=== Завершение программы ===" + ln);
+    }
+
+    @Test
+    void whenInvalidExit1() {
+        Output output = new StubOutput();
+        Input input = new MockInput(
+                new String[]{"3", "0"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = new UserAction[]{
+                new ExitAction(output)
+        };
+        new StartUI(output).init(input, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(output.toString()).isEqualTo(
+                "Меню:" + ln
+                        + "0. Завершить программу" + ln
+                        + "Неверный ввод, вы можете выбрать: 0 .. 0" + ln
+                        + "Меню:" + ln
+                        + "0. Завершить программу" + ln
+                        + "=== Завершение программы ===" + ln
+        );
     }
 }
