@@ -7,8 +7,8 @@ public class FindEl {
         for (int i = 0; i < value.length; i++) {
             if (key.equals(value[i])) {
                 result = i;
+                break;
             }
-            break;
         }
         if (result == -1) {
             throw new ElementNotFoundException("No such element in array");
