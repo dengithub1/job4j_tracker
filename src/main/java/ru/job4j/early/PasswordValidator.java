@@ -40,9 +40,11 @@ public class PasswordValidator {
         boolean hasLowCase = false;
         boolean hasDigit = false;
         boolean hasSpecial = false;
-        boolean hasSubstring = false;
 
         for (char symbol : password.toCharArray()) {
+            if (hasUpCase && hasLowCase && hasDigit && hasSpecial) {
+                break;
+            }
             if (Character.isUpperCase(symbol)) {
                 hasUpCase = true;
             }
@@ -57,9 +59,12 @@ public class PasswordValidator {
             }
         }
 
+        String pass = password.toUpperCase();
         for (String substring : FORBIDDEN) {
-            if (password.toUpperCase().contains(substring.toUpperCase())) {
-                hasSubstring = true;
+            if (pass.contains(substring.toUpperCase())) {
+                throw new IllegalArgumentException(
+                        "Password shouldn't contain substrings: qwerty, 12345, password, admin, user"
+                );
             }
         }
 
@@ -81,11 +86,6 @@ public class PasswordValidator {
         if (!hasSpecial) {
             throw new IllegalArgumentException(
                     "Password should contain at least one special symbol"
-            );
-        }
-        if (hasSubstring) {
-            throw new IllegalArgumentException(
-                    "Password shouldn't contain substrings: qwerty, 12345, password, admin, user"
             );
         }
         return password;
