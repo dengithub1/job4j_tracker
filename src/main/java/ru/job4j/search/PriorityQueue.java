@@ -12,7 +12,6 @@ public class PriorityQueue {
                 break;
             }
             index++;
-            break;
         }
         this.tasks.add(index, task);
     }
