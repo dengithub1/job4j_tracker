@@ -13,24 +13,22 @@ public class ReconstructPhrase {
 
     private String getEvenElements() {
         StringBuilder phrase = new StringBuilder();
-        int evenCounter = 0;
-        for (int i = 0; i < evenElements.size(); i++) {
-            if (evenCounter % 2 == 0) {
-                phrase.append(evenElements.pollFirst());
+        int size = evenElements.size();
+        for (int i = 0; i < size; i++) {
+            if (i % 2 == 0) {
+                phrase.append(evenElements.poll());
             } else {
-                evenElements.pollFirst();
+                evenElements.poll();
             }
-            i--;
-            evenCounter++;
         }
         return phrase.toString();
     }
 
     private String getDescendingElements() {
         StringBuilder phrase = new StringBuilder();
-        for (int i = 0; i < descendingElements.size(); i++) {
+        int size = descendingElements.size();
+        for (int i = 0; i < size; i++) {
             phrase.append(descendingElements.pollLast());
-            i--;
         }
         return phrase.toString();
     }
