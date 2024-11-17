@@ -76,8 +76,8 @@ public class AnalyzeByMap {
         for (String key : map.keySet()) {
             int value = map.get(key);
             list.add(new Label(key, value));
-            list.sort(Comparator.naturalOrder());
         }
+        list.sort(Comparator.naturalOrder());
         return list.get(list.size() - 1);
     }
 }
