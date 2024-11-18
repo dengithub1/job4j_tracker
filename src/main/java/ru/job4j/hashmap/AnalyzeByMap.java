@@ -37,8 +37,7 @@ public class AnalyzeByMap {
         List<Label> list = new ArrayList<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                map.put(subject.name(), map.getOrDefault(subject.name(), 0));
-                map.put(subject.name(), map.get(subject.name()) + subject.score());
+                map.put(subject.name(), map.getOrDefault(subject.name(), 0) + subject.score());
             }
         }
         for (String key : map.keySet()) {
