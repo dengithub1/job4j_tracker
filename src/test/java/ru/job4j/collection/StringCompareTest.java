@@ -7,7 +7,7 @@ public class StringCompareTest {
     @Test
     public void whenStringsAreEqualThenZero() {
         StringCompare compare = new StringCompare();
-        int result = compare.compare1(
+        int result = compare.compare(
                 "Ivanov",
                 "Ivanov"
         );
@@ -17,7 +17,7 @@ public class StringCompareTest {
     @Test
     public void whenLeftLessThanRightResultShouldBeNegative() {
         StringCompare compare = new StringCompare();
-        int result = compare.compare1(
+        int result = compare.compare(
                 "Ivanov",
                 "Ivanova"
         );
@@ -27,7 +27,7 @@ public class StringCompareTest {
     @Test
     public void whenLeftGreaterThanRightResultShouldBePositive() {
         StringCompare compare = new StringCompare();
-        int result = compare.compare1(
+        int result = compare.compare(
                 "Petrov",
                 "Ivanova"
         );
@@ -37,7 +37,7 @@ public class StringCompareTest {
     @Test
     public void secondCharOfLeftGreaterThanRightShouldBePositive() {
         StringCompare compare = new StringCompare();
-        int result = compare.compare1(
+        int result = compare.compare(
                 "Petrov",
                 "Patrov"
         );
@@ -47,7 +47,7 @@ public class StringCompareTest {
     @Test
     public void secondCharOfLeftLessThanRightShouldBeNegative() {
         StringCompare compare = new StringCompare();
-        int result = compare.compare1(
+        int result = compare.compare(
                 "Patrova",
                 "Petrov"
         );
