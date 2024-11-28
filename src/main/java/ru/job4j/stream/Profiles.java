@@ -8,7 +8,7 @@ public class Profiles {
 
     public static List<Address> collect(List<Profile> profiles) {
         List<Address> result = profiles.stream()
-                .map(profile -> profile.getAddress())
+                .map(Profile::getAddress)
                 .collect(Collectors.toList());
         return result;
     }
